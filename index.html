@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vision | Lua Script</title>
+<title>.Luau | Luau Script</title>
 
 <style>
 
@@ -17,33 +17,23 @@
     font-family:Inter,Arial,sans-serif;
 }
 
-
 body{
-
     background:#050505;
     color:white;
     overflow-x:hidden;
-
 }
-
 
 body::before{
+    content:"";
+    position:fixed;
+    inset:0;
 
-content:"";
-position:fixed;
-inset:0;
+    background:
+    radial-gradient(circle at top,#252525,transparent 40%),
+    radial-gradient(circle at bottom,#111,transparent 50%);
 
-background:
-radial-gradient(circle at top,#222,transparent 40%),
-radial-gradient(circle at bottom,#111,transparent 50%);
-
-z-index:-1;
-
+    z-index:-1;
 }
-
-
-
-/* NAVIGATION */
 
 
 nav{
@@ -61,9 +51,9 @@ align-items:center;
 
 .logo{
 
-font-size:38px;
+font-size:42px;
 font-weight:1000;
-letter-spacing:-3px;
+letter-spacing:-4px;
 
 }
 
@@ -95,11 +85,6 @@ color:white;
 
 
 
-
-
-/* PAGE SYSTEM */
-
-
 .page{
 
 display:none;
@@ -118,10 +103,6 @@ display:block;
 
 
 
-
-/* HOME */
-
-
 .hero{
 
 height:70vh;
@@ -129,6 +110,7 @@ height:70vh;
 display:flex;
 justify-content:center;
 align-items:center;
+
 flex-direction:column;
 
 text-align:center;
@@ -139,12 +121,11 @@ text-align:center;
 
 .hero h1{
 
-font-size:110px;
+font-size:120px;
 font-weight:1000;
-letter-spacing:-8px;
+letter-spacing:-10px;
 
 }
-
 
 
 .hero h1 span{
@@ -158,14 +139,17 @@ color:#777;
 .hero p{
 
 margin-top:25px;
+
 max-width:650px;
 
 font-size:21px;
+
 color:#999;
 
 line-height:1.5;
 
 }
+
 
 
 
@@ -176,12 +160,15 @@ margin-top:35px;
 padding:16px 45px;
 
 background:white;
+
 color:black;
 
 border:none;
+
 border-radius:10px;
 
 font-weight:bold;
+
 font-size:16px;
 
 cursor:pointer;
@@ -193,7 +180,7 @@ transition:.3s;
 
 button:hover{
 
-transform:translateY(-4px);
+transform:translateY(-5px);
 
 }
 
@@ -201,12 +188,10 @@ transform:translateY(-4px);
 
 
 
-/* SECTIONS */
-
-
 .title{
 
 font-size:60px;
+
 font-weight:900;
 
 margin-bottom:45px;
@@ -228,6 +213,7 @@ gap:25px;
 
 
 
+
 .card{
 
 background:#0b0b0b;
@@ -241,7 +227,6 @@ border-radius:18px;
 transition:.3s;
 
 }
-
 
 
 .card:hover{
@@ -273,29 +258,16 @@ line-height:1.5;
 
 
 
-
-/* CHANGELOG */
-
-
-.update{
-
-margin-bottom:20px;
-
-}
-
-
-
-
-/* DISCORD */
-
-
 .discord{
 
 height:60vh;
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 flex-direction:column;
 
 text-align:center;
@@ -303,15 +275,15 @@ text-align:center;
 }
 
 
-
 .discord p{
 
-color:#999;
 font-size:20px;
+
+color:#999;
+
 max-width:600px;
 
 }
-
 
 
 
@@ -327,9 +299,7 @@ color:#555;
 }
 
 
-
 </style>
-
 
 </head>
 
@@ -338,13 +308,12 @@ color:#555;
 
 
 
-
 <nav>
 
 
 <div class="logo">
 
-VISION<span>.</span>
+<span>.LUAU</span>
 
 </div>
 
@@ -356,21 +325,17 @@ VISION<span>.</span>
 Home
 </a>
 
-
 <a onclick="openPage('features')">
 Features
 </a>
-
 
 <a onclick="openPage('updates')">
 Changelog
 </a>
 
-
 <a onclick="openPage('discord')">
 Discord
 </a>
-
 
 </div>
 
@@ -382,10 +347,6 @@ Discord
 
 
 
-
-<!-- HOME -->
-
-
 <div id="home" class="page active">
 
 
@@ -394,16 +355,15 @@ Discord
 
 <h1>
 
-VISION<span>.</span>
+<span>.LUAU</span>
 
 </h1>
 
 
-
 <p>
 
-A premium Lua script designed with a focus on quality,
-performance, and a clean user experience.
+A premium Luau script focused on performance,
+quality, and a clean user experience.
 
 </p>
 
@@ -411,12 +371,11 @@ performance, and a clean user experience.
 
 <button onclick="openPage('discord')">
 
-Join Vision
+Join .Luau
 
 </button>
 
 
-
 </div>
 
 
@@ -426,9 +385,6 @@ Join Vision
 
 
 
-
-
-<!-- FEATURES -->
 
 
 <div id="features" class="page">
@@ -453,12 +409,11 @@ Features
 
 <p>
 
-Built with performance and efficiency in mind.
+Built for smooth execution and reliable performance.
 
 </p>
 
 </div>
-
 
 
 
@@ -470,13 +425,11 @@ Built with performance and efficiency in mind.
 
 <p>
 
-A clean and modern interface created for a smooth experience.
+A clean and modern interface designed for .Luau.
 
 </p>
 
 </div>
-
-
 
 
 
@@ -488,25 +441,23 @@ A clean and modern interface created for a smooth experience.
 
 <p>
 
-Regular improvements, fixes, and new additions.
+Regular improvements and new additions.
 
 </p>
 
 </div>
-
-
 
 
 
 <div class="card">
 
 <h2>
-💎 Vision Experience
+💎 Quality
 </h2>
 
 <p>
 
-A polished script built around simplicity and quality.
+A polished Luau project built with attention to detail.
 
 </p>
 
@@ -522,9 +473,6 @@ A polished script built around simplicity and quality.
 
 
 
-
-
-<!-- UPDATES -->
 
 
 <div id="updates" class="page">
@@ -538,22 +486,21 @@ Changelog
 
 
 
-
-<div class="card update">
+<div class="card">
 
 <h2>
 
-Vision v1.0
+.Luau Rebrand
 
 </h2>
 
 
 <p>
 
-Initial release of Vision.
+The project has been rebranded to .Luau with updated
+identity, visuals, and website design.
 
 </p>
-
 
 </div>
 
@@ -561,22 +508,21 @@ Initial release of Vision.
 
 
 
-<div class="card update">
+<div class="card">
 
 <h2>
 
-Vision v1.1
+Website Update
 
 </h2>
 
 
 <p>
 
-Improved performance, interface updates,
-and stability improvements.
+Created the official .Luau website with navigation,
+features, changelog, and Discord integration.
 
 </p>
-
 
 </div>
 
@@ -584,7 +530,26 @@ and stability improvements.
 
 
 
-<div class="card update">
+<div class="card">
+
+<h2>
+
+.Luau v1.0
+
+</h2>
+
+
+<p>
+
+Initial release of .Luau.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
 
 <h2>
 
@@ -595,11 +560,10 @@ Coming Soon
 
 <p>
 
-More updates and improvements currently being developed.
+Future improvements and additions are being developed.
 
 </p>
 
-
 </div>
 
 
@@ -611,9 +575,6 @@ More updates and improvements currently being developed.
 
 
 
-
-
-<!-- DISCORD -->
 
 
 <div id="discord" class="page">
@@ -624,15 +585,16 @@ More updates and improvements currently being developed.
 
 <h1 class="title">
 
-Join Vision
+Join .Luau
 
 </h1>
 
 
+
 <p>
 
-Join the official Vision Discord for updates,
-announcements, support, and community news.
+Join the official .Luau Discord for updates,
+announcements, and community support.
 
 </p>
 
@@ -640,13 +602,11 @@ announcements, support, and community news.
 
 <a href="https://discord.gg/6tNsNMJqRy" target="_blank">
 
-
 <button>
 
 Join Discord
 
 </button>
-
 
 </a>
 
@@ -662,10 +622,9 @@ Join Discord
 
 
 
-
 <footer>
 
-© 2026 Vision. All Rights Reserved.
+© 2026 .Luau. All Rights Reserved.
 
 </footer>
 
@@ -673,9 +632,7 @@ Join Discord
 
 
 
-
 <script>
-
 
 function openPage(page){
 
@@ -695,9 +652,7 @@ window.scrollTo(0,0);
 
 }
 
-
 </script>
-
 
 
 </body>
