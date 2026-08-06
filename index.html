@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vision | Lua</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+
+nav{
+    width:90%;
+    margin:auto;
+    padding:25px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+.logo{
+    font-size:34px;
+    font-weight:1000;
+    letter-spacing:-2px;
+}
+
+
+.logo span{
+    color:#777;
+}
+
+
+nav a{
+    color:#888;
+    text-decoration:none;
+    margin-left:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+nav a:hover{
+    color:white;
+}
+
+
+
+.page{
+
+    display:none;
+    min-height:80vh;
+    padding:80px 8%;
+
+}
+
+
+.active{
+    display:block;
+}
+
+
+
+/* HOME */
+
+.hero{
+
+height:75vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+
+}
+
+
+.hero h1{
+
+font-size:100px;
+font-weight:1000;
+letter-spacing:-6px;
+
+}
+
+
+.hero span{
+
+color:#777;
+
+}
+
+
+.hero p{
+
+color:#999;
+font-size:20px;
+max-width:650px;
+margin-top:20px;
+
+}
+
+
+
+button{
+
+margin-top:35px;
+padding:16px 45px;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+background:white;
+color:black;
+
+}
+
+
+
+
+/* CARDS */
+
+
+.title{
+
+font-size:55px;
+margin-bottom:40px;
+
+}
+
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+
+}
+
+
+.card{
+
+background:#0c0c0c;
+border:1px solid #222;
+padding:30px;
+border-radius:15px;
+transition:.3s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-8px);
+border-color:#555;
+
+}
+
+
+.card p{
+
+color:#999;
+margin-top:15px;
+
+}
+
+
+
+/* DISCORD */
+
+
+.discord{
+
+text-align:center;
+height:70vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+}
+
+
+
+footer{
+
+text-align:center;
+padding:40px;
+color:#555;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<nav>
+
+<div class="logo">
+VISION<span>.</span>
+</div>
+
+
+<div>
+
+<a onclick="openPage('home')">Home</a>
+<a onclick="openPage('features')">Features</a>
+<a onclick="openPage('updates')">Updates</a>
+<a onclick="openPage('discord')">Discord</a>
+
+</div>
+
+</nav>
+
+
+
+
+
+<!-- HOME -->
+
+<div id="home" class="page active">
+
+<div class="hero">
+
+<h1>
+VISION<span>.</span>
+</h1>
+
+
+<p>
+A premium Lua scripting platform built for performance,
+innovation, and a next generation experience.
+</p>
+
+
+<button onclick="openPage('discord')">
+Join Vision
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- FEATURES -->
+
+
+<div id="features" class="page">
+
+
+<h1 class="title">
+Features
+</h1>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h2>
+⚡ Performance
+</h2>
+
+<p>
+Optimized systems designed for speed and reliability.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+🎨 Premium UI
+</h2>
+
+<p>
+A clean modern interface with a professional design.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+🔒 Secure Systems
+</h2>
+
+<p>
+Advanced systems focused on stability and protection.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+🛠 Updates
+</h2>
+
+<p>
+Constant improvements and new features.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- UPDATES -->
+
+
+<div id="updates" class="page">
+
+
+<h1 class="title">
+Updates
+</h1>
+
+
+
+<div class="card">
+
+<h2>
+Vision v1.0
+</h2>
+
+<p>
+Initial Vision release.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Vision v1.1
+</h2>
+
+<p>
+Improved systems and interface upgrades.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Coming Soon
+</h2>
+
+<p>
+New features currently in development.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- DISCORD -->
+
+
+<div id="discord" class="page">
+
+
+<div class="discord">
+
+
+<h1 class="title">
+Join Vision
+</h1>
+
+
+<p>
+Join our Discord community for updates,
+support, and announcements.
+</p>
+
+
+<a href="https://discord.gg/6tNsNMJqRy" target="_blank">
+
+<button>
+Join Discord
+</button>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<footer>
+
+© 2026 Vision. All Rights Reserved.
+
+</footer>
+
+
+
+
+<script>
+
+function openPage(page){
+
+document.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
+
+document.getElementById(page)
+.classList.add("active");
+
+window.scrollTo(0,0);
+
+}
+
+</script>
+
+
+
+</body>
+</html>
