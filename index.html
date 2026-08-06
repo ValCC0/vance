@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vision | Lua</title>
+<title>Vision | Lua Script</title>
 
 <style>
 
@@ -13,104 +14,156 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Inter,Arial,sans-serif;
 }
 
+
 body{
+
     background:#050505;
     color:white;
     overflow-x:hidden;
+
 }
 
 
+body::before{
+
+content:"";
+position:fixed;
+inset:0;
+
+background:
+radial-gradient(circle at top,#222,transparent 40%),
+radial-gradient(circle at bottom,#111,transparent 50%);
+
+z-index:-1;
+
+}
+
+
+
+/* NAVIGATION */
+
+
 nav{
-    width:90%;
-    margin:auto;
-    padding:25px 0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+
+width:90%;
+margin:auto;
+padding:30px 0;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
 }
 
 
 .logo{
-    font-size:34px;
-    font-weight:1000;
-    letter-spacing:-2px;
+
+font-size:38px;
+font-weight:1000;
+letter-spacing:-3px;
+
 }
 
 
 .logo span{
-    color:#777;
-}
-
-
-nav a{
-    color:#888;
-    text-decoration:none;
-    margin-left:30px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-
-nav a:hover{
-    color:white;
-}
-
-
-
-.page{
-
-    display:none;
-    min-height:80vh;
-    padding:80px 8%;
-
-}
-
-
-.active{
-    display:block;
-}
-
-
-
-/* HOME */
-
-.hero{
-
-height:75vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-
-}
-
-
-.hero h1{
-
-font-size:100px;
-font-weight:1000;
-letter-spacing:-6px;
-
-}
-
-
-.hero span{
 
 color:#777;
 
 }
 
 
+
+nav a{
+
+color:#888;
+text-decoration:none;
+margin-left:30px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+
+nav a:hover{
+
+color:white;
+
+}
+
+
+
+
+
+/* PAGE SYSTEM */
+
+
+.page{
+
+display:none;
+min-height:80vh;
+padding:80px 8%;
+
+}
+
+
+.active{
+
+display:block;
+
+}
+
+
+
+
+
+/* HOME */
+
+
+.hero{
+
+height:70vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+
+}
+
+
+
+.hero h1{
+
+font-size:110px;
+font-weight:1000;
+letter-spacing:-8px;
+
+}
+
+
+
+.hero h1 span{
+
+color:#777;
+
+}
+
+
+
 .hero p{
 
-color:#999;
-font-size:20px;
+margin-top:25px;
 max-width:650px;
-margin-top:20px;
+
+font-size:21px;
+color:#999;
+
+line-height:1.5;
 
 }
 
@@ -119,64 +172,117 @@ margin-top:20px;
 button{
 
 margin-top:35px;
+
 padding:16px 45px;
-border:none;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
+
 background:white;
 color:black;
 
-}
+border:none;
+border-radius:10px;
 
+font-weight:bold;
+font-size:16px;
 
+cursor:pointer;
 
-
-/* CARDS */
-
-
-.title{
-
-font-size:55px;
-margin-bottom:40px;
-
-}
-
-
-.grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-
-}
-
-
-.card{
-
-background:#0c0c0c;
-border:1px solid #222;
-padding:30px;
-border-radius:15px;
 transition:.3s;
 
 }
 
 
+button:hover{
+
+transform:translateY(-4px);
+
+}
+
+
+
+
+
+/* SECTIONS */
+
+
+.title{
+
+font-size:60px;
+font-weight:900;
+
+margin-bottom:45px;
+
+}
+
+
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+
+
+.card{
+
+background:#0b0b0b;
+
+border:1px solid #222;
+
+padding:35px;
+
+border-radius:18px;
+
+transition:.3s;
+
+}
+
+
+
 .card:hover{
 
 transform:translateY(-8px);
+
 border-color:#555;
 
 }
 
 
+
+.card h2{
+
+margin-bottom:15px;
+
+}
+
+
+
 .card p{
 
 color:#999;
-margin-top:15px;
+
+line-height:1.5;
 
 }
+
+
+
+
+
+/* CHANGELOG */
+
+
+.update{
+
+margin-bottom:20px;
+
+}
+
 
 
 
@@ -185,24 +291,41 @@ margin-top:15px;
 
 .discord{
 
-text-align:center;
-height:70vh;
+height:60vh;
+
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
 
+text-align:center;
+
 }
+
+
+
+.discord p{
+
+color:#999;
+font-size:20px;
+max-width:600px;
+
+}
+
+
 
 
 
 footer{
 
 text-align:center;
-padding:40px;
+
+padding:50px;
+
 color:#555;
 
 }
+
 
 
 </style>
@@ -215,21 +338,42 @@ color:#555;
 
 
 
+
 <nav>
 
+
 <div class="logo">
+
 VISION<span>.</span>
+
 </div>
+
 
 
 <div>
 
-<a onclick="openPage('home')">Home</a>
-<a onclick="openPage('features')">Features</a>
-<a onclick="openPage('updates')">Updates</a>
-<a onclick="openPage('discord')">Discord</a>
+<a onclick="openPage('home')">
+Home
+</a>
+
+
+<a onclick="openPage('features')">
+Features
+</a>
+
+
+<a onclick="openPage('updates')">
+Changelog
+</a>
+
+
+<a onclick="openPage('discord')">
+Discord
+</a>
+
 
 </div>
+
 
 </nav>
 
@@ -237,31 +381,47 @@ VISION<span>.</span>
 
 
 
+
+
 <!-- HOME -->
+
 
 <div id="home" class="page active">
 
+
 <div class="hero">
 
+
 <h1>
+
 VISION<span>.</span>
+
 </h1>
 
 
+
 <p>
-A premium Lua scripting platform built for performance,
-innovation, and a next generation experience.
+
+A premium Lua script designed with a focus on quality,
+performance, and a clean user experience.
+
 </p>
 
 
+
 <button onclick="openPage('discord')">
+
 Join Vision
+
 </button>
 
 
-</div>
 
 </div>
+
+
+</div>
+
 
 
 
@@ -275,8 +435,11 @@ Join Vision
 
 
 <h1 class="title">
+
 Features
+
 </h1>
+
 
 
 <div class="grid">
@@ -285,14 +448,17 @@ Features
 <div class="card">
 
 <h2>
-⚡ Performance
+⚡ Optimized
 </h2>
 
 <p>
-Optimized systems designed for speed and reliability.
+
+Built with performance and efficiency in mind.
+
 </p>
 
 </div>
+
 
 
 
@@ -303,35 +469,45 @@ Optimized systems designed for speed and reliability.
 </h2>
 
 <p>
-A clean modern interface with a professional design.
+
+A clean and modern interface created for a smooth experience.
+
 </p>
 
 </div>
 
 
 
+
+
 <div class="card">
 
 <h2>
-🔒 Secure Systems
+🔄 Updates
 </h2>
 
 <p>
-Advanced systems focused on stability and protection.
+
+Regular improvements, fixes, and new additions.
+
 </p>
 
 </div>
 
 
 
+
+
 <div class="card">
 
 <h2>
-🛠 Updates
+💎 Vision Experience
 </h2>
 
 <p>
-Constant improvements and new features.
+
+A polished script built around simplicity and quality.
+
 </p>
 
 </div>
@@ -355,54 +531,81 @@ Constant improvements and new features.
 
 
 <h1 class="title">
-Updates
+
+Changelog
+
 </h1>
 
 
 
-<div class="card">
+
+<div class="card update">
 
 <h2>
+
 Vision v1.0
+
 </h2>
 
+
 <p>
-Initial Vision release.
+
+Initial release of Vision.
+
 </p>
+
 
 </div>
 
 
 
-<div class="card">
+
+
+<div class="card update">
 
 <h2>
+
 Vision v1.1
+
 </h2>
 
+
 <p>
-Improved systems and interface upgrades.
+
+Improved performance, interface updates,
+and stability improvements.
+
 </p>
+
 
 </div>
 
 
 
-<div class="card">
+
+
+<div class="card update">
 
 <h2>
+
 Coming Soon
+
 </h2>
 
+
 <p>
-New features currently in development.
+
+More updates and improvements currently being developed.
+
 </p>
 
-</div>
-
-
 
 </div>
+
+
+
+</div>
+
 
 
 
@@ -420,29 +623,40 @@ New features currently in development.
 
 
 <h1 class="title">
+
 Join Vision
+
 </h1>
 
 
 <p>
-Join our Discord community for updates,
-support, and announcements.
+
+Join the official Vision Discord for updates,
+announcements, support, and community news.
+
 </p>
+
 
 
 <a href="https://discord.gg/6tNsNMJqRy" target="_blank">
 
+
 <button>
+
 Join Discord
+
 </button>
+
 
 </a>
 
 
+
 </div>
 
 
 </div>
+
 
 
 
@@ -458,23 +672,34 @@ Join Discord
 
 
 
+
+
 <script>
+
 
 function openPage(page){
 
 document.querySelectorAll(".page")
-.forEach(p=>p.classList.remove("active"));
+.forEach(section=>{
+
+section.classList.remove("active");
+
+});
+
 
 document.getElementById(page)
 .classList.add("active");
 
+
 window.scrollTo(0,0);
 
 }
+
 
 </script>
 
 
 
 </body>
+
 </html>
