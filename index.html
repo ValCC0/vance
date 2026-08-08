@@ -10,33 +10,47 @@
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Inter,Arial,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Arial, sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    background:#050505;
-    color:white;
-    overflow-x:hidden;
+body {
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
 }
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
 
     background:
-    radial-gradient(circle at top,#252525,transparent 40%),
-    radial-gradient(circle at bottom,#111,transparent 50%);
+        radial-gradient(
+            circle at top,
+            #252525 0%,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom,
+            #111 0%,
+            transparent 50%
+        );
 
-    z-index:-1;
+    z-index: -1;
+    pointer-events: none;
 }
 
 
@@ -44,36 +58,47 @@ body::before{
    NAVIGATION
 ========================= */
 
-nav{
-    width:90%;
-    margin:auto;
-    padding:30px 0;
+nav {
+    width: 90%;
+    max-width: 1400px;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    margin: auto;
+    padding: 30px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo{
-    font-size:42px;
-    font-weight:1000;
-    letter-spacing:-4px;
+.logo {
+    font-size: 42px;
+    font-weight: 1000;
+    letter-spacing: -4px;
 }
 
-.logo span{
-    color:#777;
+.logo span {
+    color: #777;
 }
 
-nav a{
-    color:#888;
-    text-decoration:none;
-    margin-left:30px;
-    cursor:pointer;
-    transition:.3s;
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
-nav a:hover{
-    color:white;
+nav a {
+    color: #888;
+
+    text-decoration: none;
+
+    margin-left: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
 }
 
 
@@ -81,14 +106,21 @@ nav a:hover{
    PAGE SYSTEM
 ========================= */
 
-.page{
-    display:none;
-    min-height:80vh;
-    padding:80px 8%;
+.page {
+    display: none;
+
+    width: 90%;
+    max-width: 1400px;
+
+    margin: auto;
+
+    min-height: 80vh;
+
+    padding: 80px 0;
 }
 
-.active{
-    display:block;
+.active {
+    display: block;
 }
 
 
@@ -96,145 +128,211 @@ nav a:hover{
    HOME
 ========================= */
 
-.hero{
-    min-height:70vh;
+.hero {
+    min-height: 70vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    text-align:center;
+    flex-direction: column;
+
+    text-align: center;
 }
 
-.hero h1{
-    font-size:120px;
-    font-weight:1000;
-    letter-spacing:-10px;
+.hero h1 {
+    font-size: 120px;
+
+    font-weight: 1000;
+
+    letter-spacing: -10px;
+
+    line-height: 1;
 }
 
-.hero h1 span{
-    color:#777;
+.hero h1 span {
+    color: #777;
 }
 
-.hero p{
-    margin-top:25px;
+.hero p {
+    margin-top: 28px;
 
-    max-width:650px;
+    max-width: 680px;
 
-    font-size:21px;
-    color:#999;
+    font-size: 21px;
 
-    line-height:1.5;
-}
+    color: #999;
 
-button{
-    margin-top:35px;
-
-    padding:16px 45px;
-
-    background:white;
-    color:black;
-
-    border:none;
-    border-radius:10px;
-
-    font-weight:bold;
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-button:hover{
-    transform:translateY(-5px);
+    line-height: 1.6;
 }
 
 
 /* =========================
-   SECTION TITLES
+   STATUS
 ========================= */
 
-.title{
-    font-size:60px;
-    font-weight:900;
-    margin-bottom:45px;
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+    padding: 9px 17px;
+
+    background: #0b0b0b;
+
+    border: 1px solid #222;
+
+    border-radius: 999px;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    background: #2388ff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px #2388ff,
+        0 0 16px rgba(35, 136, 255, 0.45);
 }
 
 
 /* =========================
-   SCRIPT FEATURES
+   DISCORD BUTTON
 ========================= */
 
-.feature-grid{
-    display:grid;
+.discord-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 30px;
+
+    padding: 15px 32px;
+
+    background: white;
+
+    color: #050505;
+
+    border: none;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.discord-button:hover {
+    transform: translateY(-4px);
+
+    background: #e8e8e8;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.title {
+    font-size: 60px;
+
+    font-weight: 900;
+
+    margin-bottom: 45px;
+
+    letter-spacing: -2px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.feature-grid {
+    display: grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
+        repeat(auto-fit, minmax(280px, 1fr));
 
-    gap:25px;
+    gap: 25px;
 }
 
-.feature-card{
+.feature-card {
+    background: #0b0b0b;
 
-    background:#0b0b0b;
+    border: 1px solid #222;
 
-    border:1px solid #222;
+    padding: 30px;
 
-    padding:30px;
+    border-radius: 18px;
 
-    border-radius:18px;
+    min-height: 190px;
 
-    min-height:180px;
-
-    transition:.3s;
-
+    transition: 0.3s;
 }
 
-.feature-card:hover{
+.feature-card:hover {
+    transform: translateY(-8px);
 
-    transform:translateY(-8px);
+    border-color: #555;
 
-    border-color:#555;
-
+    background: #0e0e0e;
 }
 
-.feature-icon{
+.feature-icon {
+    width: 45px;
+    height: 45px;
 
-    width:45px;
-    height:45px;
+    display: flex;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
 
-    background:#151515;
+    background: #151515;
 
-    border:1px solid #292929;
+    border: 1px solid #292929;
 
-    border-radius:10px;
+    border-radius: 10px;
 
-    margin-bottom:20px;
+    margin-bottom: 20px;
 
-    font-size:20px;
+    font-size: 13px;
 
+    font-weight: bold;
+
+    color: #aaa;
 }
 
-.feature-card h2{
+.feature-card h2 {
+    font-size: 23px;
 
-    font-size:23px;
-
-    margin-bottom:12px;
-
+    margin-bottom: 12px;
 }
 
-.feature-card p{
+.feature-card p {
+    color: #888;
 
-    color:#888;
-
-    line-height:1.5;
-
+    line-height: 1.5;
 }
 
 
@@ -242,65 +340,64 @@ button:hover{
    CHANGELOG
 ========================= */
 
-.update{
+.update {
+    background: #0b0b0b;
 
-    background:#0b0b0b;
+    border: 1px solid #222;
 
-    border:1px solid #222;
+    padding: 30px;
 
-    padding:30px;
+    border-radius: 18px;
 
-    border-radius:18px;
+    margin-bottom: 20px;
 
-    margin-bottom:20px;
-
+    transition: 0.3s;
 }
 
-.update h2{
+.update:hover {
+    border-color: #444;
 
-    margin-bottom:12px;
-
+    transform: translateY(-3px);
 }
 
-.update p{
+.update h2 {
+    margin-bottom: 12px;
 
-    color:#888;
+    font-size: 24px;
+}
 
-    line-height:1.5;
+.update p {
+    color: #888;
 
+    line-height: 1.6;
 }
 
 
 /* =========================
-   DISCORD
+   DISCORD PAGE
 ========================= */
 
-.discord{
+.discord {
+    min-height: 60vh;
 
-    min-height:60vh;
+    display: flex;
 
-    display:flex;
+    justify-content: center;
+    align-items: center;
 
-    justify-content:center;
+    flex-direction: column;
 
-    align-items:center;
-
-    flex-direction:column;
-
-    text-align:center;
-
+    text-align: center;
 }
 
-.discord p{
+.discord p {
+    font-size: 20px;
 
-    font-size:20px;
+    color: #999;
 
-    color:#999;
+    max-width: 600px;
 
-    max-width:600px;
-
-    line-height:1.5;
-
+    line-height: 1.6;
 }
 
 
@@ -308,14 +405,14 @@ button:hover{
    FOOTER
 ========================= */
 
-footer{
+footer {
+    text-align: center;
 
-    text-align:center;
+    padding: 50px;
 
-    padding:50px;
+    color: #555;
 
-    color:#555;
-
+    font-size: 14px;
 }
 
 
@@ -323,31 +420,72 @@ footer{
    MOBILE
 ========================= */
 
-@media(max-width:700px){
+@media (max-width: 800px) {
 
-    nav{
-        flex-direction:column;
-        gap:20px;
+    nav {
+        flex-direction: column;
+
+        gap: 20px;
     }
 
-    nav a{
-        margin-left:10px;
-        margin-right:10px;
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
     }
 
-    .hero h1{
-        font-size:70px;
-        letter-spacing:-6px;
+    nav a {
+        margin-left: 8px;
+        margin-right: 8px;
     }
 
-    .hero p{
-        font-size:17px;
+    .hero h1 {
+        font-size: 70px;
+
+        letter-spacing: -6px;
     }
 
-    .title{
-        font-size:45px;
+    .hero p {
+        font-size: 17px;
     }
 
+    .title {
+        font-size: 45px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 34px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        padding-top: 50px;
+    }
+
+}
+
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+    background: white;
+    color: black;
 }
 
 </style>
@@ -368,7 +506,8 @@ footer{
         <span>.LUAU</span>
     </div>
 
-    <div>
+
+    <div class="nav-links">
 
         <a onclick="openPage('home')">
             Home
@@ -405,14 +544,34 @@ footer{
             <span>.LUAU</span>
         </h1>
 
+
         <p>
             A premium Luau script focused on performance,
             quality, and a clean user experience.
         </p>
 
-        <button onclick="openPage('discord')">
-            Join .Luau
-        </button>
+
+        <!-- STATUS -->
+
+        <div class="status">
+
+            <div class="status-dot"></div>
+
+            In Development
+
+        </div>
+
+
+        <!-- DISCORD -->
+
+        <a
+            class="discord-button"
+            href="https://discord.gg/6tNsNMJqRy"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Join Discord
+        </a>
 
     </div>
 
@@ -444,11 +603,11 @@ footer{
             </div>
 
             <h2>
-                Ragebot(Premium)
+                YOUR FEATURE
             </h2>
 
             <p>
-                This basically headshots opponets for damage from any were on the map.
+                Add your feature description here.
             </p>
 
         </div>
@@ -464,11 +623,11 @@ footer{
             </div>
 
             <h2>
-                Spoofers.
+                YOUR FEATURE
             </h2>
 
             <p>
-                Visual Spoofers span from the likes of, Level Spoofer, Streak Spoofer, Leaderboard Spoofer, and Device Spoofers. 
+                Add your feature description here.
             </p>
 
         </div>
@@ -484,11 +643,11 @@ footer{
             </div>
 
             <h2>
-                Esp. 
+                YOUR FEATURE
             </h2>
 
             <p>
-                Self Explanatory.
+                Add your feature description here.
             </p>
 
         </div>
@@ -504,11 +663,11 @@ footer{
             </div>
 
             <h2>
-                Unlock All. 
+                YOUR FEATURE
             </h2>
 
             <p>
-                Works 96 Percent of the time, and unlocks all weapons, charms, finishers, and cometics. 
+                Add your feature description here.
             </p>
 
         </div>
@@ -524,11 +683,11 @@ footer{
             </div>
 
             <h2>
-               Silent Aim
+                YOUR FEATURE
             </h2>
- Basically expands hitbox.
+
             <p>
-                
+                Add your feature description here.
             </p>
 
         </div>
@@ -557,7 +716,7 @@ footer{
 
         <!--
         ==========================================
-        ADD MORE FEATURES BY COPYING THIS BLOCK
+        COPY THIS TO ADD MORE FEATURES
         ==========================================
 
         <div class="feature-card">
@@ -605,8 +764,26 @@ footer{
         </h2>
 
         <p>
-            Updated the Features page to showcase actual
-            script features with customizable feature cards.
+            Added a blue "In Development" status indicator
+            to the homepage and added a dedicated Join Discord
+            button.
+        </p>
+
+    </div>
+
+
+
+    <!-- PREVIOUS UPDATE -->
+
+    <div class="update">
+
+        <h2>
+            Features Update
+        </h2>
+
+        <p>
+            Reworked the Features page to showcase actual
+            script features using customizable feature cards.
         </p>
 
     </div>
@@ -646,7 +823,7 @@ footer{
 
 
 
-    <!-- FUTURE UPDATE -->
+    <!-- FUTURE -->
 
     <div class="update">
 
@@ -678,6 +855,7 @@ footer{
             Join .Luau
         </h1>
 
+
         <p>
             Join the official .Luau Discord for updates,
             announcements, support, and community news.
@@ -685,14 +863,12 @@ footer{
 
 
         <a
+            class="discord-button"
             href="https://discord.gg/6tNsNMJqRy"
             target="_blank"
+            rel="noopener noreferrer"
         >
-
-            <button>
-                Join Discord
-            </button>
-
+            Join Discord
         </a>
 
     </div>
@@ -717,23 +893,27 @@ footer{
 
 <script>
 
-function openPage(page){
+function openPage(page) {
 
-    document.querySelectorAll(".page")
-    .forEach(section => {
+    document.querySelectorAll(".page").forEach(section => {
 
         section.classList.remove("active");
 
     });
 
 
-    document.getElementById(page)
-    .classList.add("active");
+    const selectedPage = document.getElementById(page);
+
+    if (selectedPage) {
+
+        selectedPage.classList.add("active");
+
+    }
 
 
     window.scrollTo({
-        top:0,
-        behavior:"smooth"
+        top: 0,
+        behavior: "smooth"
     });
 
 }
