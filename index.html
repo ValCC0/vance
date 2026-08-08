@@ -17,6 +17,10 @@
     font-family:Inter,Arial,sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#050505;
     color:white;
@@ -36,268 +40,315 @@ body::before{
 }
 
 
+/* =========================
+   NAVIGATION
+========================= */
+
 nav{
+    width:90%;
+    margin:auto;
+    padding:30px 0;
 
-width:90%;
-margin:auto;
-padding:30px 0;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-
 
 .logo{
-
-font-size:42px;
-font-weight:1000;
-letter-spacing:-4px;
-
+    font-size:42px;
+    font-weight:1000;
+    letter-spacing:-4px;
 }
-
 
 .logo span{
-
-color:#777;
-
+    color:#777;
 }
-
-
 
 nav a{
-
-color:#888;
-text-decoration:none;
-margin-left:30px;
-cursor:pointer;
-transition:.3s;
-
+    color:#888;
+    text-decoration:none;
+    margin-left:30px;
+    cursor:pointer;
+    transition:.3s;
 }
-
 
 nav a:hover{
-
-color:white;
-
+    color:white;
 }
 
 
+/* =========================
+   PAGE SYSTEM
+========================= */
 
 .page{
-
-display:none;
-min-height:80vh;
-padding:80px 8%;
-
+    display:none;
+    min-height:80vh;
+    padding:80px 8%;
 }
-
 
 .active{
-
-display:block;
-
+    display:block;
 }
 
 
-
+/* =========================
+   HOME
+========================= */
 
 .hero{
+    min-height:70vh;
 
-height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
 
-display:flex;
-justify-content:center;
-align-items:center;
-
-flex-direction:column;
-
-text-align:center;
-
+    text-align:center;
 }
-
-
 
 .hero h1{
-
-font-size:120px;
-font-weight:1000;
-letter-spacing:-10px;
-
+    font-size:120px;
+    font-weight:1000;
+    letter-spacing:-10px;
 }
-
 
 .hero h1 span{
-
-color:#777;
-
+    color:#777;
 }
-
-
 
 .hero p{
+    margin-top:25px;
 
-margin-top:25px;
+    max-width:650px;
 
-max-width:650px;
+    font-size:21px;
+    color:#999;
 
-font-size:21px;
-
-color:#999;
-
-line-height:1.5;
-
+    line-height:1.5;
 }
-
-
-
 
 button{
+    margin-top:35px;
 
-margin-top:35px;
+    padding:16px 45px;
 
-padding:16px 45px;
+    background:white;
+    color:black;
 
-background:white;
+    border:none;
+    border-radius:10px;
 
-color:black;
+    font-weight:bold;
+    font-size:16px;
 
-border:none;
+    cursor:pointer;
 
-border-radius:10px;
-
-font-weight:bold;
-
-font-size:16px;
-
-cursor:pointer;
-
-transition:.3s;
-
+    transition:.3s;
 }
-
 
 button:hover{
-
-transform:translateY(-5px);
-
+    transform:translateY(-5px);
 }
 
 
-
-
+/* =========================
+   SECTION TITLES
+========================= */
 
 .title{
+    font-size:60px;
+    font-weight:900;
+    margin-bottom:45px;
+}
 
-font-size:60px;
 
-font-weight:900;
+/* =========================
+   SCRIPT FEATURES
+========================= */
 
-margin-bottom:45px;
+.feature-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+.feature-card{
+
+    background:#0b0b0b;
+
+    border:1px solid #222;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    min-height:180px;
+
+    transition:.3s;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#555;
+
+}
+
+.feature-icon{
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#151515;
+
+    border:1px solid #292929;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+}
+
+.feature-card h2{
+
+    font-size:23px;
+
+    margin-bottom:12px;
+
+}
+
+.feature-card p{
+
+    color:#888;
+
+    line-height:1.5;
 
 }
 
 
+/* =========================
+   CHANGELOG
+========================= */
 
-.grid{
+.update{
 
-display:grid;
+    background:#0b0b0b;
 
-grid-template-columns:
-repeat(auto-fit,minmax(260px,1fr));
+    border:1px solid #222;
 
-gap:25px;
+    padding:30px;
+
+    border-radius:18px;
+
+    margin-bottom:20px;
+
+}
+
+.update h2{
+
+    margin-bottom:12px;
+
+}
+
+.update p{
+
+    color:#888;
+
+    line-height:1.5;
 
 }
 
 
-
-
-.card{
-
-background:#0b0b0b;
-
-border:1px solid #222;
-
-padding:35px;
-
-border-radius:18px;
-
-transition:.3s;
-
-}
-
-
-.card:hover{
-
-transform:translateY(-8px);
-
-border-color:#555;
-
-}
-
-
-
-.card h2{
-
-margin-bottom:15px;
-
-}
-
-
-
-.card p{
-
-color:#999;
-
-line-height:1.5;
-
-}
-
-
-
+/* =========================
+   DISCORD
+========================= */
 
 .discord{
 
-height:60vh;
+    min-height:60vh;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 
-flex-direction:column;
+    flex-direction:column;
 
-text-align:center;
+    text-align:center;
 
 }
-
 
 .discord p{
 
-font-size:20px;
+    font-size:20px;
 
-color:#999;
+    color:#999;
 
-max-width:600px;
+    max-width:600px;
+
+    line-height:1.5;
 
 }
 
 
-
+/* =========================
+   FOOTER
+========================= */
 
 footer{
 
-text-align:center;
+    text-align:center;
 
-padding:50px;
+    padding:50px;
 
-color:#555;
+    color:#555;
 
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav a{
+        margin-left:10px;
+        margin-right:10px;
+    }
+
+    .hero h1{
+        font-size:70px;
+        letter-spacing:-6px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .title{
+        font-size:45px;
+    }
+
+}
 
 </style>
 
@@ -307,327 +358,359 @@ color:#555;
 <body>
 
 
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
+    <div class="logo">
+        <span>.LUAU</span>
+    </div>
 
-<div class="logo">
+    <div>
 
-<span>.LUAU</span>
+        <a onclick="openPage('home')">
+            Home
+        </a>
 
-</div>
+        <a onclick="openPage('features')">
+            Features
+        </a>
 
+        <a onclick="openPage('updates')">
+            Changelog
+        </a>
 
+        <a onclick="openPage('discord')">
+            Discord
+        </a>
 
-<div>
-
-<a onclick="openPage('home')">
-Home
-</a>
-
-<a onclick="openPage('features')">
-Features
-</a>
-
-<a onclick="openPage('updates')">
-Changelog
-</a>
-
-<a onclick="openPage('discord')">
-Discord
-</a>
-
-</div>
-
+    </div>
 
 </nav>
 
 
 
 
-
+<!-- =========================
+     HOME
+========================= -->
 
 <div id="home" class="page active">
 
+    <div class="hero">
 
-<div class="hero">
+        <h1>
+            <span>.LUAU</span>
+        </h1>
 
+        <p>
+            A premium Luau script focused on performance,
+            quality, and a clean user experience.
+        </p>
 
-<h1>
+        <button onclick="openPage('discord')">
+            Join .Luau
+        </button>
 
-<span>.LUAU</span>
-
-</h1>
-
-
-<p>
-
-A premium Luau script focused on performance,
-quality, and a clean user experience.
-
-</p>
-
-
-
-<button onclick="openPage('discord')">
-
-Join .Luau
-
-</button>
-
-
-</div>
-
+    </div>
 
 </div>
 
 
 
 
-
-
+<!-- =========================
+     FEATURES
+========================= -->
 
 <div id="features" class="page">
 
-
-<h1 class="title">
-
-Features
-
-</h1>
+    <h1 class="title">
+        Script Features
+    </h1>
 
 
+    <div class="feature-grid">
 
-<div class="grid">
+
+        <!-- FEATURE 1 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                01
+            </div>
+
+            <h2>
+                Ragebot(Premium)
+            </h2>
+
+            <p>
+                This basically headshots opponets for damage from any were on the map.
+            </p>
+
+        </div>
 
 
-<div class="card">
 
-<h2>
-⚡ Optimized
-</h2>
+        <!-- FEATURE 2 -->
 
-<p>
+        <div class="feature-card">
 
-Built for smooth execution and reliable performance.
+            <div class="feature-icon">
+                02
+            </div>
 
-</p>
+            <h2>
+                Spoofers.
+            </h2>
+
+            <p>
+                Visual Spoofers span from the likes of, Level Spoofer, Streak Spoofer, Leaderboard Spoofer, and Device Spoofers. 
+            </p>
+
+        </div>
+
+
+
+        <!-- FEATURE 3 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                03
+            </div>
+
+            <h2>
+                Esp. 
+            </h2>
+
+            <p>
+                Self Explanatory.
+            </p>
+
+        </div>
+
+
+
+        <!-- FEATURE 4 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                04
+            </div>
+
+            <h2>
+                Unlock All. 
+            </h2>
+
+            <p>
+                Works 96 Percent of the time, and unlocks all weapons, charms, finishers, and cometics. 
+            </p>
+
+        </div>
+
+
+
+        <!-- FEATURE 5 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                05
+            </div>
+
+            <h2>
+               Silent Aim
+            </h2>
+ Basically expands hitbox.
+            <p>
+                
+            </p>
+
+        </div>
+
+
+
+        <!-- FEATURE 6 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                06
+            </div>
+
+            <h2>
+                YOUR FEATURE
+            </h2>
+
+            <p>
+                Add your feature description here.
+            </p>
+
+        </div>
+
+
+
+        <!--
+        ==========================================
+        ADD MORE FEATURES BY COPYING THIS BLOCK
+        ==========================================
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                07
+            </div>
+
+            <h2>
+                YOUR FEATURE
+            </h2>
+
+            <p>
+                Add your feature description here.
+            </p>
+
+        </div>
+
+        -->
+
+    </div>
 
 </div>
 
 
 
-<div class="card">
 
-<h2>
-🎨 Premium UI
-</h2>
-
-<p>
-
-A clean and modern interface designed for .Luau.
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>
-🔄 Updates
-</h2>
-
-<p>
-
-Regular improvements and new additions.
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>
-💎 Quality
-</h2>
-
-<p>
-
-A polished Luau project built with attention to detail.
-
-</p>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
+<!-- =========================
+     CHANGELOG
+========================= -->
 
 <div id="updates" class="page">
 
-
-<h1 class="title">
-
-Changelog
-
-</h1>
+    <h1 class="title">
+        Changelog
+    </h1>
 
 
+    <!-- LATEST UPDATE -->
 
-<div class="card">
+    <div class="update">
 
-<h2>
+        <h2>
+            Website Update
+        </h2>
 
-.Luau Rebrand
+        <p>
+            Updated the Features page to showcase actual
+            script features with customizable feature cards.
+        </p>
 
-</h2>
-
-
-<p>
-
-The project has been rebranded to .Luau with updated
-identity, visuals, and website design.
-
-</p>
-
-</div>
+    </div>
 
 
 
+    <!-- PREVIOUS UPDATE -->
 
+    <div class="update">
 
-<div class="card">
+        <h2>
+            .Luau Rebrand
+        </h2>
 
-<h2>
+        <p>
+            The project was rebranded to .Luau with updated
+            identity, visuals, and website design.
+        </p>
 
-Website Update
-
-</h2>
-
-
-<p>
-
-Created the official .Luau website with navigation,
-features, changelog, and Discord integration.
-
-</p>
-
-</div>
+    </div>
 
 
 
+    <!-- INITIAL RELEASE -->
 
+    <div class="update">
 
-<div class="card">
+        <h2>
+            .Luau v1.0
+        </h2>
 
-<h2>
+        <p>
+            Initial release of .Luau.
+        </p>
 
-.Luau v1.0
-
-</h2>
-
-
-<p>
-
-Initial release of .Luau.
-
-</p>
-
-</div>
+    </div>
 
 
 
-<div class="card">
+    <!-- FUTURE UPDATE -->
 
-<h2>
+    <div class="update">
 
-Coming Soon
+        <h2>
+            Coming Soon
+        </h2>
 
-</h2>
+        <p>
+            More improvements and additions are currently
+            being developed.
+        </p>
 
-
-<p>
-
-Future improvements and additions are being developed.
-
-</p>
-
-</div>
-
-
+    </div>
 
 </div>
 
 
 
 
-
-
-
+<!-- =========================
+     DISCORD
+========================= -->
 
 <div id="discord" class="page">
 
+    <div class="discord">
 
-<div class="discord">
+        <h1 class="title">
+            Join .Luau
+        </h1>
 
-
-<h1 class="title">
-
-Join .Luau
-
-</h1>
-
-
-
-<p>
-
-Join the official .Luau Discord for updates,
-announcements, and community support.
-
-</p>
+        <p>
+            Join the official .Luau Discord for updates,
+            announcements, support, and community news.
+        </p>
 
 
+        <a
+            href="https://discord.gg/6tNsNMJqRy"
+            target="_blank"
+        >
 
-<a href="https://discord.gg/6tNsNMJqRy" target="_blank">
+            <button>
+                Join Discord
+            </button>
 
-<button>
+        </a>
 
-Join Discord
-
-</button>
-
-</a>
-
-
-
-</div>
-
+    </div>
 
 </div>
 
 
 
 
-
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-© 2026 .Luau. All Rights Reserved.
+    © 2026 .Luau. All Rights Reserved.
 
 </footer>
-
 
 
 
@@ -636,19 +719,22 @@ Join Discord
 
 function openPage(page){
 
-document.querySelectorAll(".page")
-.forEach(section=>{
+    document.querySelectorAll(".page")
+    .forEach(section => {
 
-section.classList.remove("active");
+        section.classList.remove("active");
 
-});
-
-
-document.getElementById(page)
-.classList.add("active");
+    });
 
 
-window.scrollTo(0,0);
+    document.getElementById(page)
+    .classList.add("active");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
