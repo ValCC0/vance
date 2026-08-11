@@ -3,7 +3,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,11 +10,16 @@
 
     <style>
 
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Inter, Arial, sans-serif;
+            cursor: none;
         }
 
         html {
@@ -61,12 +65,12 @@
 
             background:
                 linear-gradient(
-                    rgba(255,255,255,0.015) 1px,
+                    rgba(255, 255, 255, 0.015) 1px,
                     transparent 1px
                 ),
                 linear-gradient(
                     90deg,
-                    rgba(255,255,255,0.015) 1px,
+                    rgba(255, 255, 255, 0.015) 1px,
                     transparent 1px
                 );
 
@@ -89,6 +93,84 @@
 
 
         /* =====================================================
+           CUSTOM VANCE CURSOR
+        ===================================================== */
+
+        .vance-cursor {
+            position: fixed;
+
+            width: 8px;
+            height: 8px;
+
+            background: #72d6ff;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: 99999;
+
+            transform: translate(-50%, -50%);
+
+            box-shadow:
+                0 0 10px rgba(74, 202, 255, 0.9),
+                0 0 25px rgba(74, 202, 255, 0.35);
+
+            transition:
+                width 0.2s ease,
+                height 0.2s ease;
+        }
+
+        .vance-cursor-ring {
+            position: fixed;
+
+            width: 34px;
+            height: 34px;
+
+            border: 1px solid
+                rgba(105, 213, 255, 0.65);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: 99998;
+
+            transform: translate(-50%, -50%);
+
+            box-shadow:
+                0 0 15px rgba(74, 202, 255, 0.12),
+                inset 0 0 10px rgba(74, 202, 255, 0.04);
+
+            transition:
+                width 0.25s ease,
+                height 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .vance-cursor.hover {
+            width: 11px;
+            height: 11px;
+        }
+
+        .vance-cursor-ring.hover {
+            width: 46px;
+            height: 46px;
+
+            border-color:
+                rgba(105, 213, 255, 0.95);
+
+            background:
+                rgba(105, 213, 255, 0.04);
+
+            box-shadow:
+                0 0 25px rgba(74, 202, 255, 0.18),
+                inset 0 0 15px rgba(74, 202, 255, 0.05);
+        }
+
+
+        /* =====================================================
            NAVIGATION
         ===================================================== */
 
@@ -100,22 +182,27 @@
             padding: 30px 0;
 
             display: flex;
+
             justify-content: space-between;
             align-items: center;
 
             position: relative;
+
             z-index: 10;
         }
 
         .logo {
             font-size: 40px;
+
             font-weight: 1000;
+
             letter-spacing: -3px;
 
             color: #ffffff;
 
             text-shadow:
-                0 0 25px rgba(76, 198, 255, 0.20);
+                0 0 25px
+                rgba(76, 198, 255, 0.20);
         }
 
         .logo span {
@@ -134,9 +221,10 @@
 
             margin-left: 30px;
 
-            cursor: pointer;
+            cursor: none;
 
             font-size: 14px;
+
             font-weight: 600;
 
             transition: 0.3s;
@@ -146,7 +234,8 @@
             color: #69d5ff;
 
             text-shadow:
-                0 0 15px rgba(74, 199, 255, 0.45);
+                0 0 15px
+                rgba(74, 199, 255, 0.45);
         }
 
 
@@ -180,6 +269,7 @@
             min-height: 70vh;
 
             display: flex;
+
             justify-content: center;
             align-items: center;
 
@@ -236,6 +326,7 @@
             display: inline-flex;
 
             align-items: center;
+
             gap: 9px;
 
             margin-bottom: 25px;
@@ -278,6 +369,7 @@
             display: inline-flex;
 
             align-items: center;
+
             gap: 10px;
 
             margin-top: 30px;
@@ -311,7 +403,8 @@
 
             box-shadow:
                 0 0 8px #249cff,
-                0 0 18px rgba(36, 156, 255, 0.60);
+                0 0 18px
+                rgba(36, 156, 255, 0.60);
         }
 
 
@@ -339,7 +432,7 @@
             color: #031019;
 
             border: 1px solid
-                rgba(255,255,255,0.55);
+                rgba(255, 255, 255, 0.55);
 
             border-radius: 11px;
 
@@ -400,7 +493,10 @@
             display: grid;
 
             grid-template-columns:
-                repeat(auto-fit, minmax(280px, 1fr));
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
 
             gap: 22px;
         }
@@ -435,6 +531,7 @@
             position: absolute;
 
             top: 0;
+
             left: 20px;
             right: 20px;
 
@@ -486,6 +583,10 @@
             font-weight: bold;
 
             color: #6dd5ff;
+
+            box-shadow:
+                inset 0 0 20px
+                rgba(52, 177, 230, 0.04);
         }
 
         .feature-card h2 {
@@ -530,6 +631,10 @@
                 rgba(80, 199, 255, 0.32);
 
             transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 35px
+                rgba(20, 150, 200, 0.07);
         }
 
         .update-header {
@@ -631,12 +736,15 @@
 
             nav {
                 flex-direction: column;
+
                 gap: 20px;
             }
 
             .nav-links {
                 flex-wrap: wrap;
+
                 justify-content: center;
+
                 gap: 15px;
             }
 
@@ -647,6 +755,7 @@
 
             .hero h1 {
                 font-size: 70px;
+
                 letter-spacing: -6px;
             }
 
@@ -680,7 +789,25 @@
 
             .update-header {
                 flex-direction: column;
+
                 gap: 10px;
+            }
+        }
+
+
+        /* =====================================================
+           TOUCH DEVICES
+        ===================================================== */
+
+        @media (pointer: coarse) {
+
+            * {
+                cursor: auto;
+            }
+
+            .vance-cursor,
+            .vance-cursor-ring {
+                display: none;
             }
         }
 
@@ -693,6 +820,15 @@
 
 
     <!-- =====================================================
+         VANCE CUSTOM CURSOR
+    ===================================================== -->
+
+    <div class="vance-cursor"></div>
+
+    <div class="vance-cursor-ring"></div>
+
+
+    <!-- =====================================================
          NAVIGATION
     ===================================================== -->
 
@@ -701,6 +837,7 @@
         <div class="logo">
             V<span>ANCE</span>
         </div>
+
 
         <div class="nav-links">
 
@@ -726,31 +863,44 @@
 
 
     <!-- =====================================================
-         HOME
+         HOME PAGE
     ===================================================== -->
 
     <div id="home" class="page active">
 
         <div class="hero">
 
+
             <div class="frost-badge">
-                <span class="frost-icon">❄</span>
+
+                <span class="frost-icon">
+                    ❄
+                </span>
+
                 VANCE
+
             </div>
+
 
             <h1>
                 VANCE
             </h1>
+
 
             <p>
                 A premium Luau script built around performance,
                 quality, and a clean experience.
             </p>
 
+
             <div class="status">
+
                 <div class="status-dot"></div>
+
                 In Development
+
             </div>
+
 
             <a
                 class="discord-button"
@@ -767,7 +917,7 @@
 
 
     <!-- =====================================================
-         FEATURES
+         FEATURES PAGE
     ===================================================== -->
 
     <div id="features" class="page">
@@ -775,6 +925,7 @@
         <h1 class="title">
             Script Features
         </h1>
+
 
         <div class="feature-grid">
 
@@ -788,11 +939,11 @@
                 </div>
 
                 <h2>
-                    Features Coming Soon
+                    FEATURE NAME
                 </h2>
 
                 <p>
-                    Vance's features will be listed here soon.
+                    Add your feature description here.
                 </p>
 
             </div>
@@ -931,13 +1082,35 @@
             </div>
 
 
+            <!--
+            ==================================================
+            ADD MORE FEATURES BY COPYING THIS:
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    09
+                </div>
+
+                <h2>
+                    YOUR FEATURE
+                </h2>
+
+                <p>
+                    YOUR DESCRIPTION
+                </p>
+
+            </div>
+            ==================================================
+            -->
+
         </div>
 
     </div>
 
 
     <!-- =====================================================
-         UPDATES
+         UPDATES PAGE
     ===================================================== -->
 
     <div id="updates" class="page">
@@ -1004,40 +1177,80 @@
 
             <p>
                 Add your update information here.
-                Describe what was changed, added,
-                fixed, or improved in this update.
+                Describe what was changed, added, fixed,
+                or improved in this update.
             </p>
 
         </div>
 
 
+        <!--
+        ==================================================
+        ADD MORE UPDATES BY COPYING THIS:
+
+        <div class="update">
+
+            <div class="update-header">
+
+                <div>
+
+                    <span class="update-version">
+                        UPDATE 03
+                    </span>
+
+                    <h2>
+                        UPDATE TITLE
+                    </h2>
+
+                </div>
+
+                <span class="update-date">
+                    DATE
+                </span>
+
+            </div>
+
+            <p>
+                Your update information here.
+            </p>
+
+        </div>
+        ==================================================
+        -->
+
     </div>
 
 
     <!-- =====================================================
-         DISCORD
+         DISCORD PAGE
     ===================================================== -->
 
     <div id="discord" class="page">
 
         <div class="discord">
 
+
             <div class="frost-badge">
 
-                <span class="frost-icon">❄</span>
+                <span class="frost-icon">
+                    ❄
+                </span>
 
                 VANCE COMMUNITY
 
             </div>
 
+
             <h1 class="title">
                 Join Vance
             </h1>
+
 
             <p>
                 Join the official Vance Discord for updates,
                 announcements, support, and community news.
             </p>
+
 
             <a
                 class="discord-button"
@@ -1065,20 +1278,140 @@
 
 
     <!-- =====================================================
-         PAGE NAVIGATION
+         JAVASCRIPT
     ===================================================== -->
 
     <script>
+
+        /* =====================================================
+           CUSTOM CURSOR
+        ===================================================== */
+
+        const cursor =
+            document.querySelector(".vance-cursor");
+
+        const ring =
+            document.querySelector(".vance-cursor-ring");
+
+
+        let mouseX =
+            window.innerWidth / 2;
+
+        let mouseY =
+            window.innerHeight / 2;
+
+        let ringX = mouseX;
+        let ringY = mouseY;
+
+
+        document.addEventListener(
+            "mousemove",
+            function (event) {
+
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+
+                cursor.style.left =
+                    mouseX + "px";
+
+                cursor.style.top =
+                    mouseY + "px";
+
+            }
+        );
+
+
+        function animateCursor() {
+
+            ringX +=
+                (mouseX - ringX) * 0.14;
+
+            ringY +=
+                (mouseY - ringY) * 0.14;
+
+
+            ring.style.left =
+                ringX + "px";
+
+            ring.style.top =
+                ringY + "px";
+
+
+            requestAnimationFrame(
+                animateCursor
+            );
+
+        }
+
+
+        animateCursor();
+
+
+        /* =====================================================
+           CURSOR HOVER EFFECT
+        ===================================================== */
+
+        document.addEventListener(
+            "mouseover",
+            function (event) {
+
+                const target =
+                    event.target.closest(
+                        "a, button, .feature-card, .update"
+                    );
+
+
+                if (target) {
+
+                    cursor.classList.add("hover");
+
+                    ring.classList.add("hover");
+
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "mouseout",
+            function (event) {
+
+                const target =
+                    event.target.closest(
+                        "a, button, .feature-card, .update"
+                    );
+
+
+                if (target) {
+
+                    cursor.classList.remove("hover");
+
+                    ring.classList.remove("hover");
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           PAGE NAVIGATION
+        ===================================================== */
 
         function openPage(page) {
 
             document
                 .querySelectorAll(".page")
-                .forEach(section => {
+                .forEach(
+                    function (section) {
 
-                    section.classList.remove("active");
+                        section.classList.remove(
+                            "active"
+                        );
 
-                });
+                    }
+                );
 
 
             const selectedPage =
@@ -1087,7 +1420,9 @@
 
             if (selectedPage) {
 
-                selectedPage.classList.add("active");
+                selectedPage.classList.add(
+                    "active"
+                );
 
             }
 
@@ -1100,7 +1435,6 @@
         }
 
     </script>
-
 
 </body>
 
